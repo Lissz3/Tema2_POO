@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema1\\Boletin2POO\\Ex1\\Ex1.csproj": {}
+    "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema2\\SolucionPOO\\Boletin2POO\\Ex1\\Ex1.csproj": {}
   },
   "projects": {
-    "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema1\\Boletin2POO\\Ex1\\Ex1.csproj": {
+    "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema2\\SolucionPOO\\Boletin2POO\\Ex1\\Ex1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema1\\Boletin2POO\\Ex1\\Ex1.csproj",
+        "projectUniqueName": "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema2\\SolucionPOO\\Boletin2POO\\Ex1\\Ex1.csproj",
         "projectName": "Ex1",
-        "projectPath": "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema1\\Boletin2POO\\Ex1\\Ex1.csproj",
+        "projectPath": "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema2\\SolucionPOO\\Boletin2POO\\Ex1\\Ex1.csproj",
         "packagesPath": "C:\\Users\\bdisa\\.nuget\\packages\\",
-        "outputPath": "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema1\\Boletin2POO\\Ex1\\obj\\",
+        "outputPath": "G:\\Mi unidad\\04.DESENV INTERF\\1EV\\Tema2\\SolucionPOO\\Boletin2POO\\Ex1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bdisa\\AppData\\Roaming\\NuGet\\NuGet.Config",

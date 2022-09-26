@@ -11,7 +11,6 @@ namespace Ex1
 		string? dept;
 		private double profit;
 		private int workers;
-		private double earnedMoney;
 
 		public int Workers
 		{
@@ -25,11 +24,11 @@ namespace Ex1
 				{
 					profit = 2;
 				}
-				else if (workers > 10 && workers < 50)
+				else if (workers < 50)
 				{
 					profit = 3.5;
 				}
-				else if (workers >= 50)
+				else
 				{
 					profit = 4;
 				}
@@ -57,11 +56,11 @@ namespace Ex1
 			Console.WriteLine("Departamento a cargo: {0}. Beneficios: {1}%. Número de trabajadores: {2}.", dept, profit, workers);
 		}
 
-		public void TakeInfo(string name, string lastname, string dni, int age, string dept, int workers)
+		public void TakeInfo()
 		{
-			base.TakeInfo(name, lastname, dni, age);
-			this.dept = dept;
-			Workers = workers;
+			base.TakeInfo();
+			this.dept =  Console.ReadLine();
+			Workers = Convert.ToInt16(Console.ReadLine());
 		}
 
 

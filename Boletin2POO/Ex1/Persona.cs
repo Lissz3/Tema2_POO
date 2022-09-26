@@ -11,8 +11,6 @@ namespace Ex1
 {
 	abstract class Persona
 	{
-		private string name;
-		private string lastName;
 		private string dni;
 		private int age;
 
@@ -39,10 +37,13 @@ namespace Ex1
 		{
 			set
 			{
+				age = value;
+
 				if (age < 0)
 				{
 					age = 0;
 				}
+
 			}
 
 			get { return age; }
@@ -53,12 +54,12 @@ namespace Ex1
 			Console.WriteLine("Nombre: {0}. Apellido: {1}. DNI: {2}. Edad: {3}.", Name, LastName, Dni, Age);
 		}
 
-		public virtual void TakeInfo(string name, string lastname, string dni, int age)
+		public virtual void TakeInfo()
 		{
-			Name = name;
-			LastName = lastname;
-			Dni = dni;
-			Age = age;
+			Name = Console.ReadLine();
+			LastName = Console.ReadLine();
+			Dni = Console.ReadLine();
+			Age = Convert.ToInt16(Console.ReadLine());
 		}
 
 		public Persona(string name, string lastName, string dni, int age)

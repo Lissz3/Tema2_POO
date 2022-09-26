@@ -51,7 +51,7 @@ namespace Ex1
 		public override void ShowInfo()
 		{
 			base.ShowInfo();
-			Console.WriteLine("Salario: {0}. IRPF: {1}%. Número {2}.", salario, Irpf, Phone);
+			Console.WriteLine("Salario: {0}. IRPF: {1}%. Número {2}.", Salario, Irpf, Phone);
 		}
 
 		public void ShowInfo(int n)
@@ -83,6 +83,13 @@ namespace Ex1
 					Console.WriteLine("Opción no válida");
 					break;
 			}
+		}
+
+		public override void TakeInfo()
+		{
+			base.TakeInfo();
+			Salario = Convert.ToDouble(Console.ReadLine());
+			Phone = Console.ReadLine();
 		}
 
 		public Empleado(string name, string lastname, string dni, int age, double salario, string phone)
