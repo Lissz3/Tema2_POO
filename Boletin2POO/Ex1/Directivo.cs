@@ -1,4 +1,6 @@
-﻿using System;
+﻿#nullable disable
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +11,21 @@ namespace Ex1
 	internal class Directivo : Persona, IPastaGansa
 	{
 		string? dept;
-		private double profit;
+
 		private int workers;
+
+		public Directivo(string name, string lastname, string dni, int age, string dept, int workers)
+			: base(name, lastname, dni, age)
+		{
+			this.dept = dept;
+			Workers = workers;
+		}
+
+		public Directivo()
+			: this(null, null, null, 0, null, 0)
+		{
+
+		}
 
 		public int Workers
 		{
@@ -22,27 +37,27 @@ namespace Ex1
 
 				if (workers <= 10)
 				{
-					profit = 2;
+					Profit = 2;
 				}
 				else if (workers < 50)
 				{
-					profit = 3.5;
+					Profit = 3.5;
 				}
 				else
 				{
-					profit = 4;
+					Profit = 4;
 				}
 
 			}
 		}
 
-		public double Profit { get; }
+		public double Profit { set;  get; }
 
 		public static Directivo operator --(Directivo dir)
 		{
-			if (dir.profit > 0)
+			if (dir.Profit > 0)
 			{
-				dir.profit--;
+				dir.Profit--;
 			}
 
 			return dir;
@@ -53,14 +68,21 @@ namespace Ex1
 		public override void ShowInfo()
 		{
 			base.ShowInfo();
-			Console.WriteLine("Departamento a cargo: {0}. Beneficios: {1}%. Número de trabajadores: {2}.", dept, profit, workers);
+			Console.WriteLine("Departamento a cargo: {0}. Beneficios: {1}%. Número de trabajadores: {2}.", dept, Profit, workers);
 		}
 
-		public void TakeInfo()
+		public override void TakeInfo()
 		{
 			base.TakeInfo();
-			this.dept =  Console.ReadLine();
-			Workers = Convert.ToInt16(Console.ReadLine());
+			Console.Write("Departamento: ");
+			dept = Console.ReadLine();
+			int validWorkers;
+			Console.Write("Número de trabajadores a cargo: ");
+			while (!int.TryParse(Console.ReadLine(), out validWorkers))
+			{
+				Console.WriteLine("Carácter(es) inválido(s), introduzca un número:");
+			}
+			Workers = validWorkers;
 		}
 
 
@@ -71,21 +93,21 @@ namespace Ex1
 
 		public double GanarPasta(double money)
 		{
-			double newProfit;
+			double newEarnedMoney;
 
 			if (money <= 0)
 			{
 				Directivo d = this;
 				d--;
 
-				profit = d.Profit;
+				Profit = d.Profit;
 			}
 
-			newProfit = money * Profit / 100;
-			EarnedMoney = newProfit;
+			newEarnedMoney = money * Profit / 100;
+			EarnedMoney = newEarnedMoney;
 
 
-			return newProfit;
+			return newEarnedMoney;
 		}
 	}
 }

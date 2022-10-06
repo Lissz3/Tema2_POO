@@ -88,7 +88,14 @@ namespace Ex1
 		public override void TakeInfo()
 		{
 			base.TakeInfo();
-			Salario = Convert.ToDouble(Console.ReadLine());
+			Console.Write("Salario: ");
+			double salary;
+			while (!double.TryParse(Console.ReadLine(), out salary))
+			{
+				Console.WriteLine("Carácter(es) inválido(s), introduzca un número:");
+			}
+			Salario = salary;
+			Console.Write("Número de teléfono: ");
 			Phone = Console.ReadLine();
 		}
 

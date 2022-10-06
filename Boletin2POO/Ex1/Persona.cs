@@ -26,10 +26,10 @@ namespace Ex1
 			get
 			{
 				string letters = "TRWAGMYFPDXBNJZSQVHLCKE";
-				int charat = (Convert.ToInt32(dni) % 23);
-				string newDni = dni + letters[charat];
 
-				return newDni;
+				int charat = Convert.ToInt32(dni.Substring(0, dni.Length-1)) % 23;
+
+				return dni.Substring(0, dni.Length - 1) + letters[charat];
 			}
 		}
 
@@ -56,10 +56,19 @@ namespace Ex1
 
 		public virtual void TakeInfo()
 		{
+			Console.Write("Nombre: ");
 			Name = Console.ReadLine();
+			Console.Write("Apellido: ");
 			LastName = Console.ReadLine();
+			Console.Write("DNI: ");
 			Dni = Console.ReadLine();
-			Age = Convert.ToInt16(Console.ReadLine());
+			Console.Write("Edad: ");
+			int age;
+			while (!int.TryParse(Console.ReadLine(), out age))
+			{
+				Console.WriteLine("Carácter(es) inválido(s), introduzca un número:");
+			}
+			Age = age;
 		}
 
 		public Persona(string name, string lastName, string dni, int age)
@@ -72,7 +81,7 @@ namespace Ex1
 		}
 
 		public Persona()
-			: this("", "", "47407434", 0)
+			: this("", "", "", 0)
 		{
 
 		}
