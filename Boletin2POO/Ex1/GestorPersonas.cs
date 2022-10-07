@@ -15,14 +15,12 @@ namespace Ex1
 		//No inserta(ba) bien en la posición
 		public int Position(int age)
 		{
+			
 			for (int i = 0; i < personal.Count(); i++)
 			{
 				if(age <= personal[i].Age)
 				{
 					return i;
-				} else
-				{
-					return personal.Count();
 				}
 			}
 			return -1;

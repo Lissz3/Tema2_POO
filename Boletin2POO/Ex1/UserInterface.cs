@@ -110,6 +110,8 @@ namespace Ex1
 		{
 			int addOption;
 
+			do
+			{
 			Console.WriteLine("1.- Añadir un empleado.");
 			Console.WriteLine("2.- Añadir un directivo.");
 			Console.WriteLine("3.- Salir");
@@ -117,8 +119,6 @@ namespace Ex1
 
 			addOption = Comprobation();
 
-			do
-			{
 				switch (addOption)
 				{
 					case 1:
